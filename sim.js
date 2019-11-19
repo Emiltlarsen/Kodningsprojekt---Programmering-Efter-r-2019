@@ -7,16 +7,10 @@ var MODSTAND_JORDEN = 1;   //Angiver aftagelsen af hastigheden når genstanden b
 
 
 
-createCanvas(500, 400);
-
-/*function setup() {
 
 
+function setup() {
+    createCanvas(500, 400);
+    ellipse(56, 46, 55, 55);
 
-    noStroke();
 }
-
-function draw() {
-    fill(255, 0,0 );
-}
-*/
