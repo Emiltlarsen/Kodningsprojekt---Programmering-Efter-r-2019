@@ -9,6 +9,9 @@ var MODSTAND_JORDEN = 1;   //Angiver aftagelsen af hastigheden når genstanden b
 
 
 function setup() {
-    createCanvas(BREDDE, HOJDE, 255);
+    createCanvas(BREDDE, HOJDE );
+}
 
+function draw() {
+    fill(255, 0,0 );
 }
