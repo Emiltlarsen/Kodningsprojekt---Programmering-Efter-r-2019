@@ -46,20 +46,21 @@ function draw(){
         //N=m*a
     d=1/2*(TYNGDE_KRAFT_JORDEN-0)*(timelapsed*timelapsed);
         //d=1/2*g*t^2 
+        var decid = d.toFixed(2);
     v=TYNGDE_KRAFT_JORDEN*timelapsed;
         //v=g*t
         var deciv = v.toFixed(2);
     N_v=1/2*Luft_rho*(areal.A_bold+areal.A_faldskærm)*(v*v)*Drag; //fix
         //N_v=1/2*rho*A*v^2*C_d(Drag coefficient)
+        var decimod = N_v.toFixed(2);
 
-
-    textSize(32);
+    textSize(23);
     text("Tid gået = " + decitl, 50, 175);
     text("Newton = " + N_genstand, 50, 225);
-    text("Distance = " + d, 50, 275);
+    text("Distance = " + decid, 50, 275);
     text("Hastighed = " + deciv, 50, 325);
     text("Acceleration = " + acc, 50, 375);
-    text("Modstand = " + N_v, 50, 125);
+    text("Modstand = " + decimod, 50, 125);
 
     fill(0, 100, 200);
 
