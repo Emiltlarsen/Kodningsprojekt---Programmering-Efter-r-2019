@@ -30,6 +30,8 @@ function draw(){
 
     
 timelapsed = timelapsed + 1/30
+    var decitl = timelapsed.toFixed(2);
+    
     /*
     distancetraveled = timelapsed * 9,8
     
@@ -38,12 +40,13 @@ timelapsed = timelapsed + 1/30
     acc = (1/2)*TYNGDE_KRAFT_JORDEN / timelapsed^2
     d=1/2*TYNGDE_KRAFT_JORDEN*timelapsed^2
     v=TYNGDE_KRAFT_JORDEN*timelapsed
+    var deciv = v.toFixed(2);
     
     textSize(20);
-    text("Tid gået = " + timelapsed, 50, 225);
+    text("Tid gået = " + decitl, 50, 225);
     text("Newton = " + N, 50, 275);
     text("Distance = " + d, 50, 325);
-    text("Hastighed = " + v, 50, 375);
+    text("Hastighed = " + deciv, 50, 375);
 
     fill(0, 100, 200)
 
