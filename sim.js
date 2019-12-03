@@ -48,8 +48,8 @@ function draw(){
         //d=1/2*g*t^2 
     v=TYNGDE_KRAFT_JORDEN*timelapsed;
         //v=g*t
-    N_v=1/2*Luft_rho*(areal.A_bold+areal.A_faldskærm)*(v*v)*Drag;
-
+    N_v=1/2*Luft_rho*(areal.A_bold+areal.A_faldskærm)*(v*v)*Drag; //fix
+        //N_v=1/2*rho*A*v^2*C_d(Drag coefficient)
     
 
     textSize(32);
