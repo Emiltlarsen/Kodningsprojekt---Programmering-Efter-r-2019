@@ -51,6 +51,7 @@ function draw(){
     N_v=1/2*Luft_rho*(areal.A_bold+areal.A_faldskærm)*(v*v)*Drag;
 
     
+
     textSize(32);
     text("Tid gået = " + timelapsed, 50, 175);
     text("Newton = " + N_genstand, 50, 225);
