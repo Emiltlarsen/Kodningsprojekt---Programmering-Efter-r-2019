@@ -2,29 +2,39 @@ var BREDDE = 800;   //Bredden af canvasset
 var HOJDE = 400;    //Højden af canvasset
 
 var TYNGDE_KRAFT_JORDEN = 9.82;     //Fortæller jordens tyngdekraft
-var Luft_rho = 1.225;   //Angiver aftagelsen af hastigheden når genstanden bevæger sig
-var Drag = 18*10^-6;
+//var Luft_rho = 1.225;   //Angiver aftagelsen af hastigheden når genstanden bevæger sig
+//var Drag = 0.00018;
+
 
 var N_genstand = 0;
 var N_vind = 0;
 var timelapsed = 0;
-var d = 0;
-var acc = TYNGDE_KRAFT_JORDEN;
+var d = 0; //distance 
+var acc = TYNGDE_KRAFT_JORDEN; //acceleration
 var v = 0;
-
+var Cd = 1.36
 
 var masse = {
+    m_para: 0,
     m_bold: 100,
     m_kasse: 0,
     }
 
-var areal = {
-    A_faldskærm: 10,
-    A_bold: 0.5,
-    A_kasse: 0,
 
+var radius = {
+    r_para: 4
 }
 
+
+/*
+var areal = {
+    A_para: ,
+    A_bold: 0,
+    A_kasse: 0,
+}
+*/
+
+var A = 3.1415 * (radius.r_para*radius.r_para)
 
 
 function setup() {
@@ -68,7 +78,10 @@ function draw(){
     //v=g*t
         var deciv = v.toFixed(2);
 
-    N_v=1/2*Luft_rho*(areal.A_bold+areal.A_faldskærm)*(v*v)*Drag; //fix
+    ///N_v= (Cd*radius.r_para*(v*v)*A)/2  
+    //
+    //vælg oppe eller nede
+    ///N_v=1/2*Luft_rho*(areal.A_bold+areal.A_faldskærm)*(v*v)*Drag; //fix
     //N_v=1/2*rho*A*v^2*C_d(Drag coefficient)
         var decimod = N_v.toFixed(2);
 
@@ -82,6 +95,6 @@ function draw(){
 
     fill(0, 100, 200);
 
-    if ((frameCount %30)==0) print(d);
+    //if ((frameCount %30)==0) print(d);
 
 }
