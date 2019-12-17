@@ -27,7 +27,7 @@ function setup() {
 function draw(){
     background(200);
     ellipse(56, 46, 55, 55);
-
+    
     
     timelapsed = timelapsed + deltaTime/1000
     /*
@@ -37,6 +37,7 @@ function draw(){
     */
     d=1/2*TYNGDE_KRAFT_JORDEN*timelapsed^2
     v=TYNGDE_KRAFT_JORDEN*timelapsed
+    
     textSize(32);
     text("Tid gået = " + timelapsed, 50, 225);
     text("Newton = " + N, 50, 275);
