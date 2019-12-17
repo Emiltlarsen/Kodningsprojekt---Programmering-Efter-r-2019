@@ -38,8 +38,7 @@ function draw(){
     background(200);
     ellipse(BREDDE/2, HOJDE/2, 55, 55);
     
-    
-    timelapsed = timelapsed + deltaTime/1000
+    timelapsed = timelapsed + 0.0333333
     /*
     distancetraveled = timelapsed * 9,8
     
