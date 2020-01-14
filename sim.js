@@ -75,16 +75,18 @@ function draw(){
     //d=1/2*g*t^2 
         var decid = d.toFixed(2);
 
-    v=TYNGDE_KRAFT_JORDEN*timelapsed;
-    //v=g*t
-        var deciv = v.toFixed(2);
-
-    N_v= (Cd*radius.r_para*(v*v)*A)/2  
+    N_v= Cd*radius.r_para*v*v*A*0.5
     //
     //vælg oppe eller nede
     ///N_v=1/2*Luft_rho*(areal.A_bold+areal.A_faldskærm)*(v*v)*Drag; //fix
     //N_v=1/2*rho*A*v^2*C_d(Drag coefficient)
         var decimod = N_v.toFixed(2);
+
+    v=(TYNGDE_KRAFT_JORDEN-N_v)*timelapsed;
+    //v=g*t
+        var deciv = v.toFixed(2);
+
+
 
     
 
