@@ -49,7 +49,7 @@ function draw(){
     background(200);
     ellipse(BREDDE/2, HOJDE/2, 55, 55);
     
-    timelapsed = timelapsed + 0.0333333
+
     /*
     distancetraveled = timelapsed * 9,8
     
@@ -65,7 +65,7 @@ function draw(){
    
 
 
-    timelapsed = timelapsed + 0.33;
+    timelapsed = timelapsed + 0.0333333;
         var decitl = timelapsed.toFixed(2);
 
     N_genstand = masse.m_bold * acc;
@@ -85,6 +85,8 @@ function draw(){
     ///N_v=1/2*Luft_rho*(areal.A_bold+areal.A_faldskærm)*(v*v)*Drag; //fix
     //N_v=1/2*rho*A*v^2*C_d(Drag coefficient)
         var decimod = N_v.toFixed(2);
+
+    
 
     textSize(23);
     text("Tid gået = " + decitl, 50, 175);
