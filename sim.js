@@ -1,5 +1,5 @@
-var BREDDE = 800;   //Bredden af canvasset
-var HOJDE = 400;    //Højden af canvasset
+var BREDDE = 1900;   //Bredden af canvasset
+var HOJDE = 810;    //Højden af canvasset
 
 var TYNGDE_KRAFT_JORDEN = 9.82;     //Fortæller jordens tyngdekraft
 var Luft_rho = 1.225;   //Angiver aftagelsen af hastigheden når genstanden bevæger sig
