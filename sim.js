@@ -45,10 +45,9 @@ function setup() {
 
 function draw(){
     background(200);
-    let c = color(128, 128, 128);
-    fill(c);
+    let c = color(120, 120, 120);       //Definere farven 'c' så det er en farve og hvilken farve den skal være
+    fill(c);                            //Filler ellipsen med farven 'c'
     ellipse(BREDDE/2,HOJDE/2, 60);
-
 
     /*
     distancetraveled = timelapsed * 9,8
@@ -59,10 +58,7 @@ function draw(){
     v=TYNGDE_KRAFT_JORDEN*timelapsed
     
 
-
     fill(0, 100, 200)
-
-   
 
 
     timelapsed = timelapsed + 0.0333333;
