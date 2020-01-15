@@ -41,14 +41,14 @@ var A = 3.1415 * (radius.r_para*radius.r_para)
 function setup() {
     frameRate(30);
     createCanvas(BREDDE, HOJDE);
-
-
 }
 
 function draw(){
     background(200);
-    ellipse(BREDDE/2, HOJDE/2, 55, 55);
-    
+    let c = color(128, 128, 128);
+    fill(c);
+    ellipse(BREDDE/2,HOJDE/2, 60);
+
 
     /*
     distancetraveled = timelapsed * 9,8
