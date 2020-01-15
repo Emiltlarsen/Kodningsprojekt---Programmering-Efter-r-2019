@@ -71,10 +71,6 @@ function draw(){
     N_genstand = masse.m_bold * acc;
     //N=m*a
 
-    d=1/2*(TYNGDE_KRAFT_JORDEN-0)*(timelapsed*timelapsed);
-    //d=1/2*g*t^2 
-        var decid = d.toFixed(2);
-
     N_v= Cd*radius.r_para*v*v*A*0.5
     //
     //vælg oppe eller nede
@@ -82,9 +78,18 @@ function draw(){
     //N_v=1/2*rho*A*v^2*C_d(Drag coefficient)
         var decimod = N_v.toFixed(2);
 
-    v=(TYNGDE_KRAFT_JORDEN-N_v)*timelapsed;
+    d=1/2*(TYNGDE_KRAFT_JORDEN-N_v)*(timelapsed*timelapsed);
+    //d=1/2*g*t^2 
+        var decid = d.toFixed(2);
+
+    N_res=TYNGDE_KRAFT_JORDEN-N_v
+       var deciNres = N_res.toFixed(2);
+
+    //v=(TYNGDE_KRAFT_JORDEN-N_v)*timelapsed;
+    //f(x)=N_res*t
+    v=sqrt((2*masse.m_bold)/(Cd*radius.r_para*A))
     //v=g*t
-        var deciv = v.toFixed(2);
+       var deciv = v.toFixed(2);
 
 
 
@@ -97,6 +102,7 @@ function draw(){
     text("Hastighed = " + deciv, 50, 325);
     text("Acceleration = " + acc, 50, 375);
     text("Modstand = " + decimod, 50, 125);
+    text("Samlet Newton = " + deciNres, 50, 75);    
 
     fill(0, 100, 200);
 
