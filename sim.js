@@ -1,7 +1,7 @@
 var BREDDE = 800;   //Bredden af canvasset
 var HOJDE = 400;    //Højden af canvasset
 
-var TYNGDE_KRAFT_JORDEN = 9.82;     //Fortæller jordens tyngdekraft
+var TYNGDE_KRAFT_JORDEN = 9.82;     //Fortæller jordens tyngdeacceleration
 var Luft_rho = 1.225;   //Angiver aftagelsen af hastigheden når genstanden bevæger sig
 var Drag = 0.00018;
 
@@ -20,23 +20,18 @@ var masse = {
     m_kasse: 0,
     }
 
-
-
 var radius = {
-    r_para: 4
+    r_para: 5.5,
 }
 
-
-
 var areal = {
-    A_para: 0,
+    A_para: (5.5*5.5)*3.1415,
     A_bold: 0,
     A_kasse: 0,
 }
 
-
 var A = 3.1415 * (radius.r_para*radius.r_para)
-
+var W = (masse.m_para+masse.m_bold)*acc
 
 function setup() {
     frameRate(30);
@@ -48,13 +43,15 @@ function setup() {
 function draw(){
     background(200);
     ellipse(BREDDE/2, HOJDE/2, 55, 55);
-    
+
+
+    v=sqrt((2*W)/(Cd*radius.r_para*A))
 
     /*
     distancetraveled = timelapsed * 9,8
     
     N = genstand.m_bold * acc//(TYNGDE_KRAFT_JORDEN/timelapsed^2)
-    */
+    
     //d=1/2*TYNGDE_KRAFT_JORDEN*(timelapsed*timelapsed)
     v=TYNGDE_KRAFT_JORDEN*timelapsed
     
@@ -90,7 +87,7 @@ function draw(){
     v=sqrt((2*masse.m_bold)/(Cd*radius.r_para*A))
     //v=g*t
        var deciv = v.toFixed(2);
-
+*/
 
 
     
@@ -105,7 +102,5 @@ function draw(){
     text("Samlet Newton = " + deciNres, 50, 75);    
 
     fill(0, 100, 200);
-
-    //if ((frameCount %30)==0) print(d);
 
 }
