@@ -3,16 +3,13 @@ var HOJDE = 400;    //Højden af canvasset
 
 var TYNGDE_KRAFT_JORDEN = 9.82;     //Fortæller jordens tyngdeacceleration
 var Luft_rho = 1.225;   //Angiver aftagelsen af hastigheden når genstanden bevæger sig
-var Drag = 0.00018;
-
-
 var N_genstand = 0;
 var N_vind = 0;
 var timelapsed = 0;
-var d = 0; //distance 
+var distance = 0; //distance 
 var acc = TYNGDE_KRAFT_JORDEN; //acceleration
 var v = 0;
-var Cd = 1.36
+var Cd = 1.75
 
 var masse = {
     m_para: 0,
@@ -20,27 +17,31 @@ var masse = {
     m_kasse: 0,
     }
 
-var radius = {
-    r_para: 5.5,
-}
+var radius = 5.5;
 
+/*
 var areal = {
     A_para: (5.5*5.5)*3.1415,
     A_bold: 0,
     A_kasse: 0,
 }
+*/
 
-var A = 3.1415 * (radius.r_para*radius.r_para);
+var A = 3.1415 * (radius*radius);
 
-var K = Cd*A*Luft_rho;
+var K = Cd*A*Luft_rho*0.5;
+
+var D = 0
+    var D = K*(v*v);
 
 
-F_res = W - D
-//@https://www.youtube.com/watch?v=l_tixVH4aTs
+var W = 0
+    var W = (masse.m_para+masse.m_bold)*acc;
+
+
 function setup() {
     frameRate(30);
     createCanvas(BREDDE, HOJDE);
-
 
 }
 
@@ -50,16 +51,18 @@ function draw(){
 
     var D = K*(v*v);
 
-    var W = (masse.m_para+masse.m_bold)*acc;
-
-    v=sqrt((2*(W-D)/(Cd*radius.r_para*A)));
-
-    if (D>=W) {
+    if (D>W) {
         D=W
     }
-    /*
-    distancetraveled = timelapsed * 9,8
-    
+
+    v=sqrt((2*(W)/(Cd*radius*A)));
+
+    distance = timelapsed * v;
+
+    timelapsed = timelapsed + 0.0333333;
+
+
+    /*    
     N = genstand.m_bold * acc//(TYNGDE_KRAFT_JORDEN/timelapsed^2)
     
     //d=1/2*TYNGDE_KRAFT_JORDEN*(timelapsed*timelapsed)
@@ -72,7 +75,6 @@ function draw(){
    
 
 
-    timelapsed = timelapsed + 0.0333333;
         var decitl = timelapsed.toFixed(2);
 
     N_genstand = masse.m_bold * acc;
@@ -100,23 +102,24 @@ function draw(){
 */
 
 
-    
-/*
+    var deciTL = timelapsed.toFixed(2);
+    var deciW = W.toFixed(2);
+    var deciDist = distance.toFixed(2);
+    var deciv = v.toFixed(2);
+    var deciacc = acc.toFixed(2);
+    var deciM = D.toFixed(2);
+    var deciF = W-D.toFixed(2);
+
+
     textSize(23);
-    text("Tid gået = " + decitl, 50, 175);
-    text("Newton = " + N_genstand, 50, 225);
-    text("Distance = " + decid, 50, 275);
-    text("Hastighed = " + deciv, 50, 325);
-    text("Acceleration = " + acc, 50, 375);
-    text("Modstand = " + decimod, 50, 125);
-    text("Samlet Newton = " + deciNres, 50, 75);    
+    text("Tid gået = " + deciTL, 50, 200);
+    text(" > Nedad Kraft = " + deciW, 50, 100);
+    text("Distance = " + deciDist, 50, 250);
+    text("Hastighed = " + deciv, 50, 300);
+    text("Acceleration = " + deciacc, 50, 350);
+    text(" > Modstand = " + deciM, 50, 125);
+    text("Samlet Kraft = " + deciF, 50, 75);    
 
     fill(0, 100, 200);
-*/
-
-text("D = " + D, 50, 275);
-text("Hastighed = " + v, 50, 325);
-text("W = " + W, 50, 375);
-
 
 }
