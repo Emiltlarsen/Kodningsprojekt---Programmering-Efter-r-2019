@@ -43,18 +43,18 @@ function draw(){
     ellipse(BREDDE/2, HOJDE/2, masse/4, masse/4);
     
     //Slider
-    let m = slider.value();
-    masse = (m);
+    let temp = slider.value();
+    masse = (temp);
 
     //Stregerne
     let x = color('grey');      
     fill(x);
     noStroke();
-    rect(350, (250-M4A1/8), 5, v/strsK *-1);
-    rect(375, (245-M4A1/8), 5, v/strsK *-1);
-    rect(400, (240-M4A1/8), 5, v/strsK *-1);
-    rect(425, (245-M4A1/8), 5, v/strsK *-1);
-    rect(450, (250-M4A1/8), 5, v/strsK*-1)
+    rect(350, (250-temp/8), 5, v/strsK *-1);
+    rect(375, (245-temp/8), 5, v/strsK *-1);
+    rect(400, (240-temp/8), 5, v/strsK *-1);
+    rect(425, (245-temp/8), 5, v/strsK *-1);
+    rect(450, (250-temp/8), 5, v/strsK*-1)
 
     textSize(15);
     fill('black');
