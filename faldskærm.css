@@ -3,7 +3,7 @@ svg{
     width: 230px;
     height: 230px;
     z-index: 2;                             /* z-index er den tredje akse (3D), som bestemmer hvor tæt det skal være. Jo støre værdi, desto tættere er det */
-    top: 283px;
+    top: 233.5px;
     left: 836px;
     animation: fly 20s linear infinite;     /* Her oprettes animationen til faldskærmen, som varer i 20 sekunder indtil den starter forfra i et uendeligt loop */
     transform-origin: bottom center;
