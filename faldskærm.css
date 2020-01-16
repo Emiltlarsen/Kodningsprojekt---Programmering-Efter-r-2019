@@ -34,3 +34,7 @@ canvas{
     height: 810px;
 }
 
+slider{
+    z-index: 2;                             /* z-index er den tredje akse (3D), som bestemmer hvor tæt det skal være. Jo støre værdi, desto tættere er det */
+}
+

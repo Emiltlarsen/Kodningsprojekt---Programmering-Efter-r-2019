@@ -32,7 +32,7 @@ let slider;
 function setup() {
     frameRate(30);
     createCanvas(BREDDE, HOJDE);
-    slider = createSlider(10, 500, 200);
+    slider = createSlider(25, 500, 200);
     slider.position(50, 500);
     slider.style('width', '350px');
 
