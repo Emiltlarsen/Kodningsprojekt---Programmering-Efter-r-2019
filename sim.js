@@ -17,15 +17,8 @@ var masse = {
     m_kasse: 0,
     }
 
-var radius = 5.5;
 
-/*
-var areal = {
-    A_para: (5.5*5.5)*3.1415,
-    A_bold: 0,
-    A_kasse: 0,
-}
-*/
+var radius = 5.5;
 
 var A = 3.1415 * (radius*radius);
 
@@ -33,7 +26,6 @@ var K = Cd*A*Luft_rho*0.5;
 
 var D = 0
     var D = K*(v*v);
-
 
 var W = 0
     var W = (masse.m_para+masse.m_bold)*acc;
