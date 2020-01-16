@@ -1,0 +1,35 @@
+svg{
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    z-index: 2;                             /* z-index er den tredje akse (3D), som bestemmer hvor tæt det skal være. Jo støre værdi, desto tættere er det */
+    top: 283px;
+    left: 836px;
+    animation: fly 20s linear infinite;     /* Her oprettes animationen til faldskærmen, som varer i 20 sekunder indtil den starter forfra i et uendeligt loop */
+    transform-origin: bottom center;
+}
+
+/* Her tilføjes selve animations til faldskærmen, så den gynger fra side til side over et 15 sekunders loop, som så gentager sig.
+   Animationen er lavet ved hjælp af Patrick */
+@keyframes fly {
+        0%{transform:rotate(10deg);}
+        12.5%{transform:rotate(-12deg);}
+        25%{transform:rotate(10deg);}
+        37.5%{transform:rotate(-12deg);}
+        50%{transform:rotate(10deg);}
+        62.5%{transform:rotate(-12deg);}
+        75%{transform:rotate(10deg);}
+        87.5%{transform:rotate(-12deg);}
+        100%{transform:rotate(10deg);}
+    }
+
+/* Vi tilføjer et canvas og definere dens placering */
+canvas{
+    position: absolute;
+    top: 85px;
+    left: 0;
+    border: 1px solid black;
+    z-index: 1;
+    width: 1900px;
+    height: 810px;
+}
