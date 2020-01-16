@@ -1,11 +1,10 @@
 var BREDDE = 800;   //Bredden af canvasset
-var HOJDE = 400;    //Højden af canvasset
+var HOJDE = 500;    //Højden af canvasset
 
 var TYNGDE_KRAFT_JORDEN = 9.82;     //Fortæller jordens tyngdekraft
 var Luft_rho = 1.225;   //Angiver aftagelsen af hastigheden når genstanden bevæger sig
 var Drag = 0.00018;
-
-
+var kaj = 10
 var N_genstand = 0;
 var N_vind = 0;
 var timelapsed = 0;
@@ -37,17 +36,38 @@ var areal = {
 
 var A = 3.1415 * (radius.r_para*radius.r_para)
 
+let slider;
 
 function setup() {
     frameRate(30);
     createCanvas(BREDDE, HOJDE);
-
+    slider = createSlider(10, 500, 200);
+    slider.position(50, 500);
+    slider.style('width', '350px');
 
 }
 
 function draw(){
     background(200);
-    ellipse(BREDDE/2, HOJDE/2, 55, 55);
+    ellipse(BREDDE/2, HOJDE/2, masse/4, masse/4);
+    
+    //Slider
+    let M4A1 = slider.value();
+    masse = (M4A1);
+
+    //Stregerne
+    let x = color('grey');      
+    fill(x);
+    noStroke();
+    rect(350, (250-M4A1/8), 5, v/kaj *-1);
+    rect(375, (245-M4A1/8), 5, v/kaj *-1);
+    rect(400, (240-M4A1/8), 5, v/kaj *-1);
+    rect(425, (245-M4A1/8), 5, v/kaj *-1);
+    rect(450, (250-M4A1/8), 5, v/kaj*-1)
+
+    textSize(15);
+    fill('black');
+    text("Massse = " + masse, 175, 420);
     
 
     /*
@@ -56,9 +76,8 @@ function draw(){
     N = genstand.m_bold * acc//(TYNGDE_KRAFT_JORDEN/timelapsed^2)
     */
     //d=1/2*TYNGDE_KRAFT_JORDEN*(timelapsed*timelapsed)
-    v=TYNGDE_KRAFT_JORDEN*timelapsed
+    v = v + 1;
     
-
 
     fill(0, 100, 200)
 
@@ -87,7 +106,7 @@ function draw(){
 
     //v=(TYNGDE_KRAFT_JORDEN-N_v)*timelapsed;
     //f(x)=N_res*t
-    v=sqrt((2*masse.m_bold)/(Cd*radius.r_para*A))
+    //v=sqrt((2*masse.m_bold)/(Cd*radius.r_para*A))
     //v=g*t
        var deciv = v.toFixed(2);
 
@@ -103,9 +122,10 @@ function draw(){
     text("Acceleration = " + acc, 50, 375);
     text("Modstand = " + decimod, 50, 125);
     text("Samlet Newton = " + deciNres, 50, 75);    
+    
 
     fill(0, 100, 200);
-
+    
     //if ((frameCount %30)==0) print(d);
 
 }
