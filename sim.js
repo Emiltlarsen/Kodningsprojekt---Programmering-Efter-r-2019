@@ -30,9 +30,13 @@ var areal = {
     A_kasse: 0,
 }
 
-var A = 3.1415 * (radius.r_para*radius.r_para)
-var W = (masse.m_para+masse.m_bold)*acc
+var A = 3.1415 * (radius.r_para*radius.r_para);
 
+var K = Cd*A*Luft_rho;
+
+
+F_res = W - D
+//@https://www.youtube.com/watch?v=l_tixVH4aTs
 function setup() {
     frameRate(30);
     createCanvas(BREDDE, HOJDE);
@@ -44,9 +48,15 @@ function draw(){
     background(200);
     ellipse(BREDDE/2, HOJDE/2, 55, 55);
 
+    var D = K*(v*v);
 
-    v=sqrt((2*W)/(Cd*radius.r_para*A))
+    var W = (masse.m_para+masse.m_bold)*acc;
 
+    v=sqrt((2*(W-D)/(Cd*radius.r_para*A)));
+
+    if (D>=W) {
+        D=W
+    }
     /*
     distancetraveled = timelapsed * 9,8
     
@@ -91,7 +101,7 @@ function draw(){
 
 
     
-
+/*
     textSize(23);
     text("Tid gået = " + decitl, 50, 175);
     text("Newton = " + N_genstand, 50, 225);
@@ -102,5 +112,11 @@ function draw(){
     text("Samlet Newton = " + deciNres, 50, 75);    
 
     fill(0, 100, 200);
+*/
+
+text("D = " + D, 50, 275);
+text("Hastighed = " + v, 50, 325);
+text("W = " + W, 50, 375);
+
 
 }
