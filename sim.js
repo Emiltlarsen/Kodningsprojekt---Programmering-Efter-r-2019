@@ -3,7 +3,7 @@ var HOJDE = 500;    //Højden af canvasset
 
 var TYNGDE_KRAFT_JORDEN = 9.82;     //Fortæller jordens tyngdeacceleration
 var Luft_rho = 1.225;   //Angiver aftagelsen af hastigheden når genstanden bevæger sig
-var kaj = 10
+var strsK = 10
 var N_genstand = 0;
 var N_vind = 0;
 var timelapsed = 0;
@@ -43,18 +43,18 @@ function draw(){
     ellipse(BREDDE/2, HOJDE/2, masse/4, masse/4);
     
     //Slider
-    let M4A1 = slider.value();
-    masse = (M4A1);
+    let m = slider.value();
+    masse = (m);
 
     //Stregerne
     let x = color('grey');      
     fill(x);
     noStroke();
-    rect(350, (250-M4A1/8), 5, v/kaj *-1);
-    rect(375, (245-M4A1/8), 5, v/kaj *-1);
-    rect(400, (240-M4A1/8), 5, v/kaj *-1);
-    rect(425, (245-M4A1/8), 5, v/kaj *-1);
-    rect(450, (250-M4A1/8), 5, v/kaj*-1)
+    rect(350, (250-M4A1/8), 5, v/strsK *-1);
+    rect(375, (245-M4A1/8), 5, v/strsK *-1);
+    rect(400, (240-M4A1/8), 5, v/strsK *-1);
+    rect(425, (245-M4A1/8), 5, v/strsK *-1);
+    rect(450, (250-M4A1/8), 5, v/strsK*-1)
 
     textSize(15);
     fill('black');
