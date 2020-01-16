@@ -12,12 +12,7 @@ var acc = TYNGDE_KRAFT_JORDEN; //acceleration
 var v = 0;
 var Cd = 1.75
 
-var masse = {
-    m_para: 0,
-    m_bold: 100,
-    m_kasse: 0,
-    }
-
+var masse = 100;
 
 var radius = 5.5;
 
@@ -29,7 +24,8 @@ var D = 0
     var D = K*(v*v);
 
 var W = 0
-    var W = (masse.m_para+masse.m_bold)*acc;
+    var W = masse*acc;
+
 
 let slider;
 
@@ -66,6 +62,8 @@ function draw(){
     
 
     var D = K*(v*v);
+
+    var W = masse*acc;
 
     if (D>W) {
         D=W
