@@ -109,7 +109,7 @@ function draw(){
     text("Distance = " + deciDist, 50, 250);
     text("Hastighed = " + deciv, 50, 300);
     text("Acceleration = " + deciacc, 50, 350);
-    text(" > Modstand = " + deciM, 50, 125);
+    text(" > Modstand = " + -deciM, 50, 125);
     text("Samlet Kraft = " + deciF, 50, 75);    
 
     fill(0, 100, 200);
