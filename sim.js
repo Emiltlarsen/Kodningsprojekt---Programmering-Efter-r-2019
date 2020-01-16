@@ -1,5 +1,5 @@
-var BREDDE = 800;   //Bredden af canvasset
-var HOJDE = 500;    //Højden af canvasset
+var BREDDE = 1900;   //Bredden af canvasset
+var HOJDE = 810;    //Højden af canvasset
 
 var TYNGDE_KRAFT_JORDEN = 9.82;     //Fortæller jordens tyngdeacceleration
 var Luft_rho = 1.225;   //Angiver aftagelsen af hastigheden når genstanden bevæger sig
@@ -59,6 +59,11 @@ function draw(){
     textSize(15);
     fill('black');
     text("Massse = " + masse, 175, 420);
+
+    let c = color(120, 120, 120);       //Definere farven 'c' så det er en farve og hvilken farve den skal være
+    fill(c);                            //Filler ellipsen med farven 'c'
+
+
     
 
     var D = K*(v*v);
@@ -84,8 +89,6 @@ function draw(){
     
 
     fill(0, 100, 200)
-
-   
 
 
         var decitl = timelapsed.toFixed(2);
